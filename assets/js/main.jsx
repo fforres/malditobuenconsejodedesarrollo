@@ -1,6 +1,4 @@
-import React from 'react';
-import Hello from './topbar/topbar.jsx';
-main();
-function main() {
-    React.render(<TopBar />, document.getElementById('tpb'));
-}
+'use strict'
+var React = require('react')
+var TopBar = require('./topbar/topbar.jsx')
+module.exports = React.renderComponent(<TopBar />, document.getElementById('content'))

@@ -1,10 +1,10 @@
-import React from 'react';
-
-console.log("ads")
-export default class TopBar extends React.Component {
-  render() {
-    return 
-    	<nav class="navbar navbar-default">
+'use strict'
+var React = require('react');
+console.log("asd")
+module.exports = React.createClass({
+    displayName: 'TopBar',
+    render: function(){
+        return <nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -54,8 +54,6 @@ export default class TopBar extends React.Component {
 		      </ul>
 		    </div>
 		  </div>
-		</nav>;
-  }
-}
-
-
+		</nav>
+    }
+})
