@@ -9,7 +9,7 @@ module.exports = {
     // config goes here
     context: PATHS.app,
     entry: {
-        app: ['webpack/hot/dev-server','./index.js']
+        app: ['webpack/hot/dev-server', './index.js']
     },
     devtool: 'eval',
     output: {
@@ -44,6 +44,9 @@ module.exports = {
         }, {
             test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'url?limit=10000&mimetype=image/svg+xml'
+        }, {
+            test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
+            loader: 'babel' // The module to load. "babel" is short for "babel-loader"
         }]
     },
     plugins: [
