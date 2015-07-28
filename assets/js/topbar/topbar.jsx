@@ -1,6 +1,5 @@
 'use strict'
 var React = require('react');
-console.log("asd")
 module.exports = React.createClass({
     displayName: 'TopBar',
     render: function(){

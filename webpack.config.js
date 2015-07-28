@@ -44,6 +44,7 @@ module.exports = {
             loader: 'url?limit=10000&mimetype=image/svg+xml'
         }, {
             test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
+            exclude:/(node_modules|bower_components)/,
             loader: 'babel' // The module to load. "babel" is short for "babel-loader"
         }]
     }
