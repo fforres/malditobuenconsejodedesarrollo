@@ -9,14 +9,12 @@ module.exports = {
     // config goes here
     context: PATHS.app,
     entry: {
-        app: ['webpack/hot/dev-server','./index.js']
+        //app: ['webpack/hot/dev-server', './index.js']
+        app: './index.js'
     },
-    devtool: 'eval',
+    devtool: 'cheap-module-eval-source-map',
     output: {
-        path: PATHS.app,
-        publicPath: './build/',
-        filename: 'bundle.js',
-        pathinfo: true
+        filename: 'bundle.js'
     },
     resolve: {
         modulesDirectories: ['node_modules'],
@@ -44,8 +42,13 @@ module.exports = {
         }, {
             test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'url?limit=10000&mimetype=image/svg+xml'
+        }, {
+            test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
+            exclude:/(node_modules|bower_components)/,
+            loader: 'babel' // The module to load. "babel" is short for "babel-loader"
         }]
-    },
+    }
+    /*,
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             mangle: {
@@ -57,4 +60,5 @@ module.exports = {
             minimize: true
         })
     ]
+    */
 };
