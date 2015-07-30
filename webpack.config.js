@@ -10,7 +10,7 @@ module.exports = {
     context: PATHS.app,
     entry: {
         //app: ['webpack/hot/dev-server', './index.js']
-        app: './index.js'
+        app: ['./index.jsx']
     },
     devtool: 'cheap-module-eval-source-map',
     output: {
@@ -28,6 +28,9 @@ module.exports = {
             test: /\.scss$/,
             loader: 'style!css!sass'
         }, {
+            test: /\.styl$/,
+            loader: 'style-loader!css-loader!stylus-loader'
+        }, {
             test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'url?limit=10000&mimetype=application/font-woff'
         }, {
@@ -44,7 +47,7 @@ module.exports = {
             loader: 'url?limit=10000&mimetype=image/svg+xml'
         }, {
             test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
-            exclude:/(node_modules|bower_components)/,
+            exclude: /(node_modules|bower_components)/,
             loader: 'babel' // The module to load. "babel" is short for "babel-loader"
         }]
     }
