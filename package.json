@@ -38,9 +38,7 @@
     "stylus-loader": "^1.2.1",
     "url-loader": "^0.5.6",
     "webpack": "^1.10.1",
-    "webpack-dev-server": "^1.10.1"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^1.10.1",
     "react": "^0.13.3",
     "webpack-dev-server": "^1.10.1"
   }
